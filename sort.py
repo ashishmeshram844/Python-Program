@@ -31,8 +31,6 @@ def sort_list_in_ascending(lst):
                 lst[i],lst[j] = lst[j],lst[i]
         x = map(swap_element_in_list,range(len(lst)))
     return lst
-
-
   
 def sort_list_in_descending(lst):
     """ 
@@ -44,7 +42,14 @@ def sort_list_in_descending(lst):
     """
     return lst[::-1]
 
-#programme execution starts from here
-lst = input_list()
-print(sort_list_in_ascending(get_unique_list(lst)))
-print(sort_list_in_descending(sort_list_in_ascending(get_unique_list(lst))))
+def main():
+    """ 
+    Execution of program starts from here
+    """
+    lst = input_list()
+    print(sort_list_in_ascending(get_unique_list(lst)))
+    print(sort_list_in_descending(sort_list_in_ascending(get_unique_list(lst))))
+
+if __name__ == "__main__":
+    main()
+ 
