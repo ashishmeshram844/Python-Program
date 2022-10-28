@@ -23,8 +23,7 @@ def generate_fibonacci_series(num:int):
         for i in range(1,num):
             fib.append(fib[-1]+fib[-2])
         return fib
-    return fib
-
+    return "Make sure input is greate than 2 "
 
 def main():
     num = input_number()
