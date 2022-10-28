@@ -26,15 +26,12 @@ def recursion_factorial(num,fact=1):
     """ 
     Factorial of a number using recursion
     """
-    if num <= 1:
-        return fact
-    else:
-        return recursion_factorial(num-1,fact*num)
-
+    return fact if num == 1 else  recursion_factorial(num-1,fact*num)
+        
 def main():
     num = input_number()
-    factorial_of_num = factorial(num)
-    print(factorial_of_num)
+    # factorial_of_num = factorial(num)
+    # print(factorial_of_num)
     factorial_of_num = recursion_factorial(num)
     print(factorial_of_num)
 
