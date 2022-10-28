@@ -26,7 +26,7 @@ def recursion_factorial(num,fact=1):
     """ 
     Factorial of a number using recursion
     """
-    if num == 1:
+    if num <= 1:
         return fact
     else:
         return recursion_factorial(num-1,fact*num)
