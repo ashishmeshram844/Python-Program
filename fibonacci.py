@@ -1,55 +1,43 @@
-""" 
-write a program to print fibonacci series upto given number
-"""
+""" WRITE A PROGRAM TO FIND FIBONACCI SERIES  """
+import sys
+sys.setrecursionlimit(50000)
 
-def input_number():
+def find_fibonacci(rng,lst=[0,1]):
     """ 
-    This function takes the input from user 
-    - return :
-        - inputed number (int)
-    """
-    return int(input("Enter Number to find Factorial : "))
-
-def generate_fibonacci_series(num:int):
-    """ 
-    This function returns the fibonacci series upto the given number
-    - Arguments :
-        num : int
-    - return : 
-        - fib : list
-    """
-    fib = [0,1]
-    if num > 2:
-        for i in range(1,num-1):
-            fib.append(fib[-1]+fib[-2])
-        return fib
-    return "Make sure input is greate than 2 "
-
-def recursive_fibonacci(num,fibs):
-    """ 
-    This function gives the fibonacci series 
+    This function find the fibonacci series upto a given number
     - Arguments : 
-        - num : number we need fibonacci series
-        - fibs : fibonacci series
-    - returns : 
-        - fibs : final fibonacci series 
+        - rng : int
+        - lst : array
     """
-    if len(fibs) >= num:
-        return fibs
+    if len(lst) == rng:
+        return lst[:rng]
     else:
-        fibs.append(fibs[-1]+fibs[-2])
-        return recursive_fibonacci(num,fibs)
+        lst.append(lst[-1] + lst[-2])
+        return find_fibonacci(rng,lst)
 
-def main():
-    num = input_number()
-    fibonacci_list = generate_fibonacci_series(num)
-    print(fibonacci_list)
-    fibs = [0,1]
-    fibonacci_list = recursive_fibonacci(num,fibs)
-    print(fibonacci_list)
 
-if __name__ == "__main__":
+res = find_fibonacci(10000)
+print(res)
+
+
+
+
+from functools import lru_cache
+
+@lru_cache(maxsize=50000)
+def fibinacci(n = 10):
     """ 
-    Execution of program starts from here
+    This function find fibonacci number of a a given number
+    - Also User memoisation
+    
     """
-    main()
+    if n in [0,1]:
+        return n
+    else:
+        return fibinacci(n-1) + fibinacci(n-2)
+        
+print(fibinacci(40000))
+
+
+
+

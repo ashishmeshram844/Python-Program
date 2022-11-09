@@ -1,42 +1,11 @@
-""" 
-WRITE A PROGRAM TO FIND FACTORIAL OF A NUMBER
-"""
-def input_number():
+def FindFactorial(num,fact = 1):
     """ 
-    This function takes the input from user 
-    - return :
-        - inputed number (int)
+    This function finds the factorial of a number
     """
-    return int(input("Enter Number to find Factorial : "))
+    if num == 1:
+        return fact
+    else:
+        return FindFactorial(num-1,fact*num)
 
-def factorial(num):
-    """ 
-    This function find the factorial of a given number
-    - Argument:
-        - num : int
-    return :
-        - fact : factorial of a number 
-    """
-    fact = 1
-    for i in range(1,num+1):
-        fact = fact*i
-    return fact
-
-def recursion_factorial(num,fact=1):
-    """ 
-    Factorial of a number using recursion
-    """
-    return fact if num == 1 else  recursion_factorial(num-1,fact*num)
-        
-def main():
-    num = input_number()
-    # factorial_of_num = factorial(num)
-    # print(factorial_of_num)
-    factorial_of_num = recursion_factorial(num)
-    print(factorial_of_num)
-
-if __name__ == "__main__":
-    """ 
-    Execution of program starts from here
-    """
-    main()
+res = FindFactorial(5)
+print(res)
