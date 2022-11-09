@@ -15,6 +15,9 @@ def reverse_number(num,rev=0):
         return reverse_number(num//10,rev)
 
 def check_palindrome(num1,revs):
+    """ 
+    This function check the two numbers are same or not .
+    """
     if num1 == revs:
         print("palindrome")
     else:
