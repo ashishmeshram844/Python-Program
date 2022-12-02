@@ -11,7 +11,6 @@ def find_sum_and_product(array):
     sum,product = 0,1
     for num in array:
         sum += num
-    for num in array:
         product *= num
     return sum,product
 
