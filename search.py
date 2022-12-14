@@ -50,18 +50,18 @@ def binary_search(search_val,lst):
         - boolean (True/False)
     """
     low = 0
-    high = len(lst)
-    for i in range(len(lst)):
-        mid = int((low+high) / 2)
-        if lst[mid] == search_val:
+    high = len(lst) - 1
+    while (low <= high):
+        mid = ((low + high)//2)
+        if sorted_lst[mid] == search_val:
             return True
             break
-        elif search_val < lst[mid]:
-            high = mid
-        elif search_val > lst[mid]:
-            low = mid
-    else:
-        return False
+        elif search_val > sorted_lst[mid]:
+            low = mid + 1
+        elif search_val < sorted_lst[mid]:
+            high = mid - 1
+    return False
+        
 
 def main():
     lst,search_val = input_list()
