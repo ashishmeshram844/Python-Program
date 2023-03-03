@@ -12,8 +12,7 @@ def search_in_array(a,val):
         return f"{val} is present in {a} on index {a.index(val)}"
     else:
         return f"{val} is not present in {a}"
-
-
+    
 if __name__ == "__main__":
     test_cases_count = int(input("Enter How many test cases are going to give : "))
     while test_cases_count:
