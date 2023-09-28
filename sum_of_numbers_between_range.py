@@ -1,6 +1,7 @@
-"""
-Find Sum of Numbers  within given range
-"""
+""" Find Sum of Numbers  within given range """
+import sys
+sys.setrecursionlimit(50000)
+from functools import lru_cache
 
 class CalculateSum:
     """ This class contain all operations for calculating the sum of number 
@@ -23,7 +24,8 @@ class CalculateSum:
     def printInputs(self):
         """ This function simply shows text that our calculation is in process """
         print(f"calculating sum from {self.start_val } to {self.end_val} ...")
-        
+    
+    @lru_cache(maxsize=50000)
     def calculation(self,end_val):
         """ This function calculate the sum of given range recursively """
         if end_val < self.start_val:
